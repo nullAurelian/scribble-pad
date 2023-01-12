@@ -36,3 +36,7 @@ p {
   background-color: #ddd;
   color: black;
 }
+.content {
+  margin-left: 200px;
+  padding-left: 20px;
+}
