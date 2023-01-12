@@ -30,6 +30,7 @@ p {
   overflow-x: hidden;
 }
 .sidenav a {
+  font-family: Arial;
   color: white;
   padding: 10px;
   text-decoration: none;
