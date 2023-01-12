@@ -13,16 +13,23 @@
   </div>
   <div class="content">
     <h1>My projects</h1>
-    <p>
-      Small projects I've worked on, mostly for games but maybe I will have some other things.
-      <ul>
-        <li>A recreation of Tiberius_161's Counter Battery Fire script for Arma 3</li>
-        <li>Function for consuming items and incrementing for ACEX fortify</li>
-        <li>TODO</li>
-        <li>TODO</li>
-        <li>TODO</li>
-      </ul>
-    </p>
+    <template>
+      <div class="project"></div>
+    </template>
+    
+    <script>
+      var links = ["https://github.com/nullAurelian/scribble-pad"];
+      var i, a;
+      
+      function getReadme() {
+        for(i = 0; i < links.lenght; i++) {
+          a = links[i].concat("/blob/main/README.md");
+          fetch(a).then(res => res.blob()).then(blob => {
+            document.body.appendChild(a);
+          })
+        }
+      }
+    </script>
   </div>
 </body>
 </html>
