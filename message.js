@@ -1,16 +1,19 @@
-//import { request } from "@octokit/request";
 
-// const octokit = new request({
-//      auth: `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`,
-//      baseUrl: "https://api.github.com",
-// }); //Expires 2023/06/21
+let username = "nullAurelian";
+const result = await fetch(`https://api.github.com/users/${username}/repos`);
 
-const result = await fetch("https://api.github.com/users/nullAurelian/repos");
+console.log(result);
+
 const reposJson = await result.json();
-console.log(reposJson);
-// async function getThings(){
-//     const repos = await octokit.request('GET /user',{})
-//     console.log(repos);
-// }
 
-// getThings();
+function repoToElements(repositoryJson) {
+    let parsedJson = JSON.parse(repositoryJson);
+    const newDiv = document.createElement("ul");
+    const newContent = document.createTextNode(`${parsedJson.name} : ${parsedJson.description}`);
+    newDiv.appendChild(newContent);
+    document.body.append(newDiv);
+};
+
+for (const x of reposJson) {
+    repoToElements(x);
+}
