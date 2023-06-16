@@ -1,8 +1,7 @@
-import { Octokit } from "https://esm.sh/@octokit/core";
+import { Octokit, App } from "octokit";
 
-const octokit = new Octokit({})
+const octokit = new Octokit({ auth: `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`}) //Expires 2023/06/21
 
-let repos = await octokit.request('GET /users/nullAurelian/repos',{})
-let testvariable = '';
+const repos = await octokit.request('GET /users/nullAurelian/repos',{})
 
 alert(repos);
