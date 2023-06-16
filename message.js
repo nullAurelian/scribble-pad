@@ -4,4 +4,5 @@ const octokit = new Octokit({ auth: `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`})
 
 const repos = await octokit.request('GET /users/nullAurelian/repos',{})
 
-alert(repos);
+//alert(repos);
+console.log(repos);
