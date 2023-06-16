@@ -7,9 +7,9 @@ console.log(result);
 const reposJson = await result.json();
 
 function repoToElements(repositoryJson) {
-    let parsedJson = JSON.parse(repositoryJson);
+    //let parsedJson = JSON.parse(repositoryJson);
     const newDiv = document.createElement("ul");
-    const newContent = document.createTextNode(`${parsedJson.name} : ${parsedJson.description}`);
+    const newContent = document.createTextNode(`${repositoryJson.name} : ${repositoryJson.description}`);
     newDiv.appendChild(newContent);
     document.body.append(newDiv);
 };
