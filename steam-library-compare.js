@@ -19,7 +19,7 @@ function getSteamUserLibraryData(userID) {
  */
 function getSteamGameTitle(appID)
 {
-    fetch(`https://api.steampowered.com/ISteamApps/GetAppList/v2/?key=${appID}&format=JSON`)
+    fetch(`https://store.steampowered.com/api/appdetails?appids=${appID}`)
 	.then(res => {
 		res = res.json();
 	})
