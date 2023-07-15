@@ -21,6 +21,10 @@ function getSteamGameTitle(appID)
 {
     fetch(`https://store.steampowered.com/api/appdetails?appids=${appID}`,{method: 'GET', mode: "no-cors"})
 	.then(res => {
+        if(!res.ok)
+        {
+            throw new Error(`ERROR DETECTED STATUS ${res.status} : ${res.statusText}`);
+        }
 		res = res.json();
 	})
 	.catch(err => {
